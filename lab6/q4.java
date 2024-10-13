@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
 abstract class Employee{
-  int EmployeeId;
-   String name;
-    abstract int calculateSalry();
+   public int EmployeeId;
+   public String Name;
+    abstract  int calculateSalry();
 
 }
 class PartTimeEmployee extends  Employee{
     public PartTimeEmployee(int id, String name) {
         super.EmployeeId = id;
-        super.name = name;
+        super.Name = name;
+        
     }
     
-    int  calculateSalry(){
+    public int  calculateSalry(){
         return 500;
     }
 }
@@ -22,17 +23,17 @@ class ContractEmployee extends  Employee{
 
     public ContractEmployee(int id, String name) {
         super.EmployeeId = id;
-        super.name = name;
+        super.Name = name;
     }
     
-    int  calculateSalry(){
+    public int  calculateSalry(){
         return 1000;
     }
 }
 class FullTimeEmployee extends  Employee{
     public FullTimeEmployee(int id, String name) {
         super.EmployeeId = id;
-        super.name = name;
+        super.Name = name;
     }
     
     int  calculateSalry(){
@@ -53,18 +54,21 @@ public class q4 {
         switch (a) {
             case 1:
                 emp = new PartTimeEmployee(id,name);
+                System.out.println(emp.calculateSalry());
                 break;
             case 2:
-                emp= new FullTimeEmployee(id,name);
+                emp = new FullTimeEmployee(id,name);
+                System.out.println(emp.calculateSalry());
                 break;
             default:
                 emp = new ContractEmployee(id,name);
+                System.out.println(emp.calculateSalry());
                 break;
         }
         // emp.EmployeeId = id;
         // emp.name = name;
 
-        System.out.println(emp.calculateSalry());
+        
 
     }
 }

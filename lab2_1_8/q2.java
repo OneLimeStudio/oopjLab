@@ -1,44 +1,22 @@
-
-
-
-
-class DayNum{
-    int day;
-    public void calculateDAy(){
-        day %= 7;
-        switch (day) {
-            case 1:
-                System.out.println("Thursday");
-                break;
-            case 2:
-                System.out.println("Friday");
-                break;
-            case 3:
-                System.out.println("Saturday");
-                break;
-
-            case 4:
-                System.out.println("Sunday");
-                break;
-            case 5:
-                System.out.println("Monday");
-                break;
-            case 6:
-                System.out.println("Tuesday");
-                break;
-            case 0:
-                System.out.println("Wednesday");
-                break;
-            default:
-                throw new AssertionError();
-        }
+class Outer {
+    void outerMethod()
+    {
+    System.out.println("inside outerMethod");
+    class Inner {
+    void innerMethod()
+    {
+    System.out.println("inside innerMethod");
     }
 }
 
-public class q2 {
-        public static void main(String[] args) {
-            DayNum day = new DayNum();
-            day.day = 19;
-            day.calculateDAy();
-        }
+Inner y = new Inner();
+y.innerMethod();
+}
+}
+class q2 {
+public static void main(String[] args)
+{
+Outer x = new Outer();
+x.outerMethod();
+}
 }
